@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        hr {
+          border-color: black;
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0; 
+      }
+      </style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+
+    <title>Add Student</title>
+    <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/si"><span class="glyphicon glyphicon-chevron-left"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Add Student</h1> </div>
+  </head>
+  <body style ="background-color: #D6EAFA">
+    <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+          <form method="post" action="/addstudent">
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Name:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Name"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="DOB" class="cols-sm-2 control-label">Date of Birth: </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-baby-formula" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="DOB" id="DOB"  placeholder="Enter Date of Birth (dd/mm/yyyy)"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="gender" class="cols-sm-2 control-label">Gender:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-sort" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Gender"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nationality" class="cols-sm-2 control-label">Nationality:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-globe" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="nationality" id="nationality"  placeholder="Enter Nationality"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="language" class="cols-sm-2 control-label">Language(s) Spoken:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="language" id="language"  placeholder="Enter Languages Spoken"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="joindate" class="cols-sm-2 control-label">Year the Student Joined: </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="joindate" id="joindate"  placeholder="Enter Year the Student Joined (yyyy)"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="leavedate" class="cols-sm-2 control-label">Year the Student Will Leave: </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="leavedate" id="leavedate"  placeholder="Enter Year the Student Will Leave (yyyy)"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="photo" class="cols-sm-2 control-label">Photo URL on Imgur: </label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-camera" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="photo" id="photo"  placeholder="Enter Photo of Student URL"/>
+                </div>
+              </div>
+            </div>
+             <div style="text-align: center;">
+            <a style="color:white" href="http://www.imgur.com" target="_blank">Upload the photo and copy URL</a>
+            </div>
+
+            <div class="form-group ">
+              <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

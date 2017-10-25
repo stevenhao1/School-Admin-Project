@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        hr {
+          border-color: black;
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0; 
+      }
+      </style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+
+    <title>Add Grades</title>
+    <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/gra"><span class="glyphicon glyphicon-chevron-left"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Add Final Grades for Each Class</h1> </div>
+  </head>
+  <body style ="background-color: #D6EAFA">
+    <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+          <form method="post" action="/usg">
+          {{#each studentinformation}}
+            <div class="radio">
+              <label><input type="radio" name="oid" value="{{studentid}}"> {{name}} </label>
+            </div>
+            {{/each}}
+
+            <div class="form-group">
+              <label for="math" class="cols-sm-2 control-label">Math:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-book" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="math" id="math"  placeholder="Enter Math Final Grade" required/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="english" class="cols-sm-2 control-label">English:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="english" id="english"  placeholder="Enter English Final Grade" required/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="science" class="cols-sm-2 control-label">Science:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="science" id="science"  placeholder="Enter Science Final Grade" required/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="humanities" class="cols-sm-2 control-label">Humanities:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-book" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="humanities" id="humanities"  placeholder="Enter Humanities Final Grade" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="art" class="cols-sm-2 control-label">Art:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="art" id="art"  placeholder="Enter Art Final Grade" required/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

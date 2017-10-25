@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        hr {
+          border-color: black;
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0; 
+      }
+      </style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+
+    <title>Move Student to Former</title>
+    <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/si"><span class="glyphicon glyphicon-chevron-left"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Select One Student to Become Former</h1> </div>
+  </head>
+  <body style ="background-color: #D6EAFA">
+  <br>
+    <div class="container">
+    <div class="well">
+      <form method="post" action="/focur">
+
+      {{#each studentinformation}}
+
+    <div class="checkbox">
+      <label><input class="messageCheckbox" type="checkbox" name="" value="{{_id}}">{{name}}</label>
+    </div>
+    
+      {{/each}}     
+
+      <div class="form-group ">
+      <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+      </div>
+  </form>
+    </div>
+    </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        hr {
+          border-color: black;
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0; 
+      }
+      </style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+
+    <title>Update Date</title>
+    <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/exp"><span class="glyphicon glyphicon-chevron-left"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Update Date to Complete Goal</h1> </div>
+  </head>
+  <body style ="background-color: #D6EAFA">
+    <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+          <form method="post" action="/changeday">
+            <div class="form-group">
+              <label for="update" class="cols-sm-2 control-label">Updated Date for Goal:</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="update" id="update"  placeholder="Enter Updated Date"/>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group ">
+              <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button"></input>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

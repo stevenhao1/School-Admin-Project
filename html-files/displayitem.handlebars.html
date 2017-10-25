@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        hr {
+          border-color: black;
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #ccc;
+          margin: 1em 0;
+          padding: 0; 
+      }
+      </style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+
+    <title>Information About Your Item</title>
+    <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/in"><span class="glyphicon glyphicon-chevron-left"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Information About Your Item</h1> </div>
+  </head>
+  <body style ="background-color: #D6EAFA">
+    <div class="container">
+     <div style="position:absolute; right:25%; left:25%; width:50%" class = "list-group">
+     <br>
+      <a href = "#" class = "list-group-item active">
+        <h4 class = "list-group-item-heading">
+         Item Information
+        </h4>
+      </a>
+
+
+             {{#each name}}
+
+      <a href = "{{photo}}" target="_blank"class = "list-group-item">
+          <h4 class = "list-group-item-heading">{{name}}</h4>
+
+
+          <p class = "list-group-item-text">
+               Quantity: {{quantity}} <br>
+               Location: {{location}} <br>
+          </p>
+
+
+      </a>
+          {{/each}}
+
+
+      </div>
+    
+    </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

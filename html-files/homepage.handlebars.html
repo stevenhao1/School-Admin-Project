@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Home Page</title>
+            <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+        </head>
+<body>
+
+<div id = "header">
+    <div id="menuicondv" class="dropdown" style="float:left">
+      <button id="menuimage" class="dropbtn"><img src="img/menu.jpg" alt="menu"></button>
+      <div class="dropdown-content" style="left:0;">
+        <a href="/gra">Student Grades</a>
+        <a href="/exp">Budget</a>
+        <a href="/in">Item Inventory</a>
+        <a href="/si">Student Information</a>
+        <a href="/fi">Faculty Information</a>
+        <a href="/don">Donation Inventory</a>
+        <a href="/aboutus">About Us</a>
+      </div>
+    </div>
+
+<div class="container">
+  <div class="page-header">
+    <h1 id="welcome"> Welcome, Administrator!</h1>  
+
+    <div id = "logout_div">
+      <button class="button button5" align = right onclick="logout()">Logout</button>
+    </div>
+
+</div>
+
+<div class="alert alert-success alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Welcome!</strong> You can access all of the features using the menu icon at the top left of the screen.
+  </div>
+    <img style="border-radius:20px" src="img/building.jpg" alt="Village of Hope">
+  </div>
+
+  <div>
+  
+  </div>
+
+
+<script type="text/javascript">
+            function logout() {
+            {window.location.href = '/index'; }
+            }
+</script>
+	
+</body>
+</html>

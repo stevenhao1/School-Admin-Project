@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Budget</title>
+  <script> 
+    var totalexp = 0; 
+    var totaldon = 0;
+    var countdonor = 0;
+  </script>
+
+
+	 <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/homepage"><span class="glyphicon glyphicon-home"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Budget</h1> </div> <hr>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+	</head>
+	<body style="background-color: #D6EAF8">
+
+		<table style ="width:90%; margin:auto;" class="table table-bordered">
+    		<tbody>
+      			<tr>
+        			<td><div style ="width:100%"; class="panel panel-primary">
+      					<div class="panel-heading" style="text-align: center">Budget Information</div>
+      					<div class="panel-body">
+  								<ul class="list-group">
+    							<li class="list-group-item">Current Budget: $<span id="myText"></span> </li>
+    							<li class="list-group-item">Required Budget: ${{#each requiredbudget}}{{update}} 
+                  <script> var balance = {{update}}; </script> {{/each}}</li>
+  								</ul>
+						</div>
+    					</div>
+               <button style="margin:auto; width:100%" class="button button5" onclick="location.href='/updatebudget'">Update Required Budget</button>
+    				</td>
+        			<td><div style ="width:100%"; class="panel panel-primary">
+      					<div class="panel-heading" style="text-align: center">Goal Information</div>
+      					<div class="panel-body">
+      							<ul class="list-group">
+    							<li class="list-group-item">Date the Budget Goal Must be Met: {{#each remainingdays}} {{update}} 
+                  {{/each}}</li>
+    							<li class="list-group-item">Money Remaining to Accomplish Budgeting Goal: $<span id="lel"></span></li>
+  								</ul>
+      					</div>
+    					</div>
+             <button style="margin:auto; width:100%" class="button button5" onclick="location.href='/updateday'">Update Date the Goal Must be Met</button>
+    				</td>
+
+    				<td><div style ="width:100%"; class="panel panel-primary">
+      					<div class="panel-heading" style="text-align: center">Donation Information</div>
+      					<div class="panel-body">
+  								<ul class="list-group">
+    							<li class="list-group-item">Total Donation Income: $<span id="donting"></span></li>
+    							<li class="list-group-item">Number of Donors: <span id="daysleftboys"></span></li>
+  								</ul>
+						</div>
+    					</div>
+              <button style="margin:auto; width:100%" class="button button5" onclick="location.href='/don'">Donation Inventory</button>
+    				</td>
+      			</tr>
+      			
+    		</tbody>
+  		</table>
+
+  		<table style ="width:90%; margin:auto;" class="table table-bordered">
+    		<tbody>
+      			<tr>
+        			<td style="width:100px">
+              <h3 style="text-align: center"> Expenditure </h3>
+              <div style="text-align: center">
+                    <button class="button button5" onclick="location.href='/addexpense'">Add Expenses</button>
+                    <div style="display:inline-block;">
+                    <form method="post" action="/remexp">
+                    <button type="submit" class="button button5">Remove All Expenditure Transactions</button>
+                    </form>
+                    </div>
+              </div>
+
+<br>
+
+  <div class="panel-group" id="accordion">
+
+{{#each expenditure}}
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{_id}}">{{purpose}}</a>
+        </h4>
+      </div>
+      <div id="collapse{{_id}}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Means of Payment</th>              
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>${{amount}}</td>
+                <td>{{meansofpayment}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    totalexp=totalexp-{{amount}};
+
+    </script>
+  {{/each}}
+
+</div> 
+</div>
+    				</td>
+
+    				<td style="width:50%">
+     <h3 style="text-align: center"> Income </h3>
+     <div style="text-align: center">
+                    <button class="button button5" onclick="location.href='/addincome'">Add Income</button>
+                    <div style="display:inline-block;">
+                    <form method="post" action="/remin">
+                    <button type="submit" class="button button5">Remove All Income Transactions</button>
+                    </form>
+                    </div>
+</div>
+
+<br>
+
+  <div class="panel-group" id="accordion">
+
+{{#each income}}
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{_id}}">{{source}}</a>
+        </h4>
+      </div>
+      <div id="collapse{{_id}}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Means of Payment</th>              
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>${{amount}}</td>
+                <td>{{meansofpayment}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>  totalexp=totalexp+{{amount}} </script>
+  {{/each}}
+
+  {{#each donation}}
+
+    <script>  totaldon=totaldon+{{amount}};
+
+    countdonor = countdonor + 1;
+
+    </script>
+
+  {{/each}}
+
+</div> 
+</div>
+
+<script> 
+
+    totalexp = totalexp+totaldon; 
+
+
+  document.getElementById("daysleftboys").innerHTML = countdonor;
+
+  document.getElementById("donting").innerHTML = totaldon;
+
+  
+  document.getElementById("myText").innerHTML = totalexp;
+
+   balance = balance - totalexp;
+
+   if (balance<=0){
+
+      document.getElementById("lel").innerHTML = "Goal was met!";
+
+   }
+
+   else {
+
+      document.getElementById("lel").innerHTML = balance;
+
+   }
+
+
+</script>
+
+
+    				</td>
+      			</tr>
+      			
+    		</tbody>
+  		</table>
+
+
+	</body>
+</html>

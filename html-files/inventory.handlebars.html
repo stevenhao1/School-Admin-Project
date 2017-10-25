@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Item Inventory</title>
+
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/something.css">
+            {{>head}}
+	</head>
+
+	<body style="background-color: #D6EAF8">
+
+   <div style="display:inline-block; float: right; padding-right: 20px; padding-top: 20px"><p><a href="/homepage"><span class="glyphicon glyphicon-home"></a></span></p></div> <br>
+  <div"><h1 style="text-align:center; padding-left: 40px">Item Inventory</h1> </div> <hr>
+
+<div style="text-align: center">
+  <button class="button button5" onclick="location.href='/additem'">Add Items</button>
+  <button class="button button5" onclick="location.href='/ric'">Remove Items</button>
+  <button class="button button5" onclick="location.href='/searchitem'">Search for Items</button>
+</div>
+
+<br>
+		<div style="position:absolute; right:25%; left:25%; width:50%" class = "list-group">
+   		<a href = "#" class = "list-group-item active">
+      	<h4 class = "list-group-item-heading">
+         Items
+      	</h4>
+   		</a>
+
+         {{#each inventory}}
+   
+   		<a href = "{{photo}}" target="_blank" class = "list-group-item">
+      	  <h4 class = "list-group-item-heading">{{name}}</h4>
+
+      	  <p class = "list-group-item-text">
+               Quantity: {{quantity}} <br>
+               Location: {{location}}
+      	  </p>
+   		</a>
+
+         {{/each}}
+
+      </div>
+
+	</body>
+</html>
